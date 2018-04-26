@@ -20,7 +20,7 @@ build:
         - vc14  # [(win and py36)]
 
     script: $PYTHON setup.py clean && $PYTHON setup.py install  # [unix]
-    script: SET GENERATOR=Ninja & %PYTHON% setup.py clean & %PYTHON% setup.py install  # [win]
+    script: %PYTHON% setup.py clean & %PYTHON% setup.py install  # [win]
 
 requirements:
     build:
@@ -33,7 +33,6 @@ requirements:
         - swig  3.0.8
         - coin3d
         - colorama
-        - ninja
         - qt 5.6*
         # - soqt
     run:
