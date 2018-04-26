@@ -1,6 +1,6 @@
 {% set name = "pivy" %}
-{% set version = "0.6.4b1" %}
-{% set sha256 = "98743d0daa3b7aaaf33bb055035cf5141679a5ec6f237c4a8ee3c40d594f3510" %}
+{% set version = "0.6.4b2" %}
+{% set sha256 = "65e2a78242521841caf8fb46aba5ac8d0854bb9f05886f02ccd0bec18cf76a6e" %}
 
 package:
     name: {{ name }}
@@ -13,7 +13,7 @@ source:
 
 
 build:
-    number: 2
+    number: 3
     skip: true  # [(win and not py36)]
 
     features:
