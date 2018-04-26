@@ -19,6 +19,9 @@ build:
     features:
         - vc14  # [(win and py36)]
 
+    script: $PYTHON setup.py clean && $PYTHON setup.py install  # [unix]
+    script: SET GENERATOR=Ninja & %PYTHON% setup.py clean & %PYTHON% setup.py install  # [win]
+
 requirements:
     build:
         - toolchain
