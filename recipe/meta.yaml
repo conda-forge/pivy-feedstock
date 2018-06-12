@@ -14,8 +14,6 @@ source:
 
 build:
     number: 0
-    script: ${PYTHON} setup.py clean && ${PYTHON} setup.py install  # [unix]
-    script: %PYTHON% setup.py clean && %PYTHON% setup.py install  # [win]
 
 requirements:
     build:
