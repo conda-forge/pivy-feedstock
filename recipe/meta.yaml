@@ -14,39 +14,31 @@ source:
 
 build:
     number: 0
-    skip: true  # [(win and not py36)]
-
-    features:
-        - vc14  # [(win and py36)]
-
-    script: python setup.py clean && python setup.py install
+    script: ${PYTHON} setup.py clean && ${PYTHON} setup.py install
 
 requirements:
     build:
-        - toolchain
-        - nomkl  # [unix]
-        - vc 14  # [win]
+        - {{ compiler("cxx") }}
         - msinttypes  # [win]
         - cmake
+        - swig
+    host:
         - python
-        - swig  3.0.8
         - coin3d
+        - soqt
+        - qt
         - colorama
-        - qt 5.6*
-        # - soqt
     run:
-        - vc 14  # [win]
         - python
         - coin3d
-        - qt 5.6.*
+        - qt
         - pyside2
-        - libglu  # [linux]
-        # - soqt
+        - soqt
 
 test:
     imports:
         - pivy.coin
-        # - pivy.gui.soqt
+        - pivy.gui.soqt
 
 about:
     home: https://github.com/FreeCAD/pivy
