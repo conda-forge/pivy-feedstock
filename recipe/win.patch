@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index 88eae77..bd7c54c 100755
+--- a/setup.py
++++ b/setup.py
+@@ -526,7 +526,7 @@ class pivy_build(build):
+                         # workaround for conda qt4:
+                         CPP_FLAGS += " -I" + '"' + os.getenv("QTDIR") + "\\include\qt\Qt\""
+                         CPP_FLAGS += " -I" + '"' + os.getenv("QTDIR") + "\\include\qt\""
+-                        LDFLAGS_LIBS += os.path.join(os.getenv("COINDIR"), "lib", "SoQt.lib") + " "
++                        LDFLAGS_LIBS += os.path.join(os.getenv("COINDIR"), "lib", "SoQt1.lib") + " "
+             else:
+                 INCLUDE_DIR = self.cmake_config_dict[config_cmd + '_INCLUDE_DIR']
+                 LIB_DIR = self.cmake_config_dict[config_cmd + '_LIB_DIR']
