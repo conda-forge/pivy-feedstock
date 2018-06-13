@@ -1,13 +1,13 @@
 diff --git a/setup.py b/setup.py
-index 88eae77..bd7c54c 100755
+index 88eae77..3e49ea6 100755
 --- a/setup.py
 +++ b/setup.py
-@@ -526,7 +526,7 @@ class pivy_build(build):
-                         # workaround for conda qt4:
-                         CPP_FLAGS += " -I" + '"' + os.getenv("QTDIR") + "\\include\qt\Qt\""
-                         CPP_FLAGS += " -I" + '"' + os.getenv("QTDIR") + "\\include\qt\""
--                        LDFLAGS_LIBS += os.path.join(os.getenv("COINDIR"), "lib", "SoQt.lib") + " "
-+                        LDFLAGS_LIBS += os.path.join(os.getenv("COINDIR"), "lib", "SoQt1.lib") + " "
-             else:
-                 INCLUDE_DIR = self.cmake_config_dict[config_cmd + '_INCLUDE_DIR']
-                 LIB_DIR = self.cmake_config_dict[config_cmd + '_LIB_DIR']
+@@ -546,7 +546,7 @@ class pivy_build(build):
+                     CPP_FLAGS += ' -I' + win_quote(os.path.join(self.QTINFO.getHeadersPath(), 'QtOpenGL'))
+                     CPP_FLAGS += ' -I' + win_quote(os.path.join(self.QTINFO.getHeadersPath(), 'QtWidgets'))
+                     if sys.platform == 'win32':
+-                        LDFLAGS_LIBS += os.path.join(LIB_DIR, "SoQt.lib") + " "
++                        LDFLAGS_LIBS += " " + quote(max(glob.glob(os.path.join(LIB_DIR, "SoQt?.lib")))) + " "
+                         CPP_FLAGS += " /DSOQT_DLL"
+                     else:
+                         LDFLAGS_LIBS += ' -lSoQt'
