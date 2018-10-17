@@ -1,6 +1,6 @@
 {% set name = "pivy" %}
-{% set version = "0.6.4" %}
-{% set sha256 = "0b09bc80007b61680ce13b2dd348da6fbaf19795be9a08eeb019ea2a1f51f97e" %}
+{% set version = "0.6.5a0" %}
+{% set sha256 = "1cb23a0c3b4033f1633a7043cb89938cc6e9738984c5877e748760c881f541ca" %}
 
 package:
     name: {{ name }}
