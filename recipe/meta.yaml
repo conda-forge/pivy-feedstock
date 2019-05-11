@@ -28,12 +28,12 @@ requirements:
         - python
         - coin3d
         - soqt
-        - qt
+        - qt 5.6
         - colorama
     run:
         - python
         - coin3d
-        - qt
+        - qt 5.6
         - pyside2
         - soqt
 
