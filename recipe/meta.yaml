@@ -1,6 +1,6 @@
 {% set name = "pivy" %}
-{% set version = "0.6.5a0" %}
-{% set sha256 = "1cb23a0c3b4033f1633a7043cb89938cc6e9738984c5877e748760c881f541ca" %}
+{% set version = "0.6.5a1" %}
+{% set sha256 = "dcff28db3ce0cba42e3e316c7a9450cf9033b89251e88b4e8a05dbe37ac41e8e" %}
 
 package:
     name: {{ name }}
@@ -10,12 +10,12 @@ source:
     fn: {{ name }}.tar.gz
     url: https://github.com/FreeCAD/pivy/archive/{{ version }}.tar.gz
     sha256: {{ sha256 }}
-    patches:
-        - cmake_soqt.patch  # [unix]
+    # patches:
+    #     - cmake_soqt.patch  # [unix]
 
 
 build:
-    number: 1001
+    number: 0
 
 requirements:
     build:
