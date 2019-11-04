@@ -26,7 +26,7 @@ requirements:
         - coin3d
         - soqt
         - qt
-        - colorama
+        - colorama  # [not win]   
     run:
         - python
         - coin3d
