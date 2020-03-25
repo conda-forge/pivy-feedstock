@@ -14,6 +14,3 @@ python:
 - 3.8.* *_cpython
 qt:
 - '5.12'
-zip_keys:
-- - cxx_compiler
-  - python
