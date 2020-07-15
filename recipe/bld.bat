@@ -1,2 +1,8 @@
-%PYTHON% setup.py clean
-%PYTHON% setup.py install
+mkdir build
+cd build
+
+cmake -G "Ninja" ^
+    ..
+
+    
+ninja install

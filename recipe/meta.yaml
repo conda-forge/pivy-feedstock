@@ -1,6 +1,6 @@
 {% set name = "pivy" %}
-{% set version = "0.6.5" %}
-{% set sha256 = "16f2e339e5c59a6438266abe491013a20f53267e596850efad1559564a2c1719" %}
+{% set version = "0.6.6.a0" %}
+{% set sha256 = "f9ea3cf9549d71c68cbc0f2df6c23616c2f1a9132151545db5506c0bd7348c9a" %}
 
 package:
     name: {{ name }}
@@ -20,13 +20,13 @@ requirements:
         - {{ cdt('mesa-libgl-devel') }}  # [linux]
         - msinttypes  # [win]
         - cmake
+        - ninja
         - swig
     host:
         - python
         - coin3d
         - soqt
         - qt
-        - colorama  # [not win]   
     run:
         - python
         - coin3d

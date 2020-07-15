@@ -5,7 +5,7 @@ Home: https://github.com/FreeCAD/pivy
 
 Package license: ISC
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: python bindings to coin3d.
 
