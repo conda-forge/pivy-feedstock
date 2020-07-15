@@ -14,7 +14,7 @@ source:
         - install.patch
 
 build:
-    number: 1
+    number: 0
 
 requirements:
     build:
