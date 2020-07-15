@@ -1,8 +1,8 @@
 diff --git a/interfaces/CMakeLists.txt b/interfaces/CMakeLists.txt
-index 60c62a9..1fcf303 100644
+index 60c62a9..4ae6e8a 100644
 --- a/interfaces/CMakeLists.txt
 +++ b/interfaces/CMakeLists.txt
-@@ -18,11 +18,15 @@ set_property(SOURCE coin.i PROPERTY INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}")
+@@ -18,11 +18,18 @@ set_property(SOURCE coin.i PROPERTY INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}")
  set_property(SOURCE coin.i APPEND PROPERTY INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/fake_headers")
  set_property(SOURCE coin.i APPEND PROPERTY INCLUDE_DIRECTORIES "${Coin_INCLUDE_DIR}")
  
@@ -12,13 +12,16 @@ index 60c62a9..1fcf303 100644
      OUTPUT_DIR ${CMAKE_BINARY_DIR}/pivy
      SOURCES coin.i)
  
-+
-+set_target_properties(coin PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++if (APPLE)
++    set_target_properties(coin PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++elseif (WIN32)
++    target_link_libraries(coin PUBLIC ${PYTHON_LIBRARIES})
++endif ()
 +
  target_include_directories(coin
      PUBLIC
      ${Coin_INCLUDE_DIR}
-@@ -32,6 +36,7 @@ target_include_directories(coin
+@@ -32,6 +39,7 @@ target_include_directories(coin
      )
  
  target_link_libraries(coin PUBLIC Coin::Coin)
@@ -26,7 +29,7 @@ index 60c62a9..1fcf303 100644
  
  
  if (SoQt_FOUND)
-@@ -51,6 +56,7 @@ if (SoQt_FOUND)
+@@ -51,6 +59,7 @@ if (SoQt_FOUND)
          SOURCES soqt.i)
  
  
@@ -34,7 +37,7 @@ index 60c62a9..1fcf303 100644
  
      target_include_directories(soqt
          PUBLIC
-@@ -63,4 +69,5 @@ if (SoQt_FOUND)
+@@ -63,4 +72,5 @@ if (SoQt_FOUND)
          )
  
      target_link_libraries(soqt PUBLIC SoQt::SoQt)
