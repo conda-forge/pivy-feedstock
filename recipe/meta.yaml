@@ -10,6 +10,8 @@ source:
     fn: {{ name }}.tar.gz
     url: https://github.com/FreeCAD/pivy/archive/{{ version }}.tar.gz
     sha256: {{ sha256 }}
+    patches:
+        - osx.patch  # [osx]
 
 build:
     number: 1
