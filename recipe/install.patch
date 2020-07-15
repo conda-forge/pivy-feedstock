@@ -1,5 +1,5 @@
 diff --git a/interfaces/CMakeLists.txt b/interfaces/CMakeLists.txt
-index 60c62a9..0b20fd5 100644
+index 60c62a9..acdae2b 100644
 --- a/interfaces/CMakeLists.txt
 +++ b/interfaces/CMakeLists.txt
 @@ -32,6 +32,7 @@ target_include_directories(coin
@@ -14,5 +14,5 @@ index 60c62a9..0b20fd5 100644
          )
  
      target_link_libraries(soqt PUBLIC SoQt::SoQt)
-+    install(TARGETS soqt DESTINATION ${python_libs}/pivy)
++    install(TARGETS soqt DESTINATION ${python_libs}/pivy/gui)
  endif()
