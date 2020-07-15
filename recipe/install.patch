@@ -1,5 +1,5 @@
 diff --git a/interfaces/CMakeLists.txt b/interfaces/CMakeLists.txt
-index 60c62a9..39e1ec5 100644
+index 60c62a9..6c3a01c 100644
 --- a/interfaces/CMakeLists.txt
 +++ b/interfaces/CMakeLists.txt
 @@ -18,11 +18,19 @@ set_property(SOURCE coin.i PROPERTY INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}")
@@ -15,7 +15,7 @@ index 60c62a9..39e1ec5 100644
 +if (APPLE)
 +    set_target_properties(coin PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
 +elseif (WIN32)
-+    set_target_properties(coin PROPERTIES LINK_FLAGS "/bigobj")
++    set_target_properties(coin PROPERTIES COMPILE_FLAGS "/bigobj")
 +    target_link_libraries(coin PUBLIC ${PYTHON_LIBRARIES})
 +endif ()
 +
@@ -38,7 +38,7 @@ index 60c62a9..39e1ec5 100644
 +    if (APPLE)
 +        set_target_properties(soqt PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
 +    elseif (WIN32)
-+        set_target_properties(coin PROPERTIES LINK_FLAGS "/bigobj")
++        set_target_properties(coin PROPERTIES COMPILE_FLAGS "/bigobj")
 +        target_link_libraries(soqt PUBLIC ${PYTHON_LIBRARIES})
 +    endif ()
  
