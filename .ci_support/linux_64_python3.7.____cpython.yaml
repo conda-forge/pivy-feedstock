@@ -18,3 +18,5 @@ python:
 - 3.7.* *_cpython
 qt:
 - '5.12'
+target_platform:
+- linux-64
