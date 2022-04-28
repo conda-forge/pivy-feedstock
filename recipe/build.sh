@@ -11,7 +11,7 @@ PIVY_CPP_FLAGS='-std=c++1z '
 cmake -G "Ninja" \
     -D CMAKE_BUILD_TYPE="Release" \
     -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX \
-    -D PYTHON_EXECUTABLE:FILEPATH=$PREFIX/bin/python \
+    -D Python_EXECUTABLE:FILEPATH=$PREFIX/bin/python \
     ..
 
 ninja install
