@@ -8,7 +8,8 @@ fi
 
 PIVY_CPP_FLAGS='-std=c++1z '
 
-cmake -G "Ninja" \
+cmake ${CMAKE_ARGS} \
+    -G "Ninja" \
     -D CMAKE_BUILD_TYPE="Release" \
     -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX \
     -D Python_EXECUTABLE="$PYTHON" \
