@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}.tar.gz
   url: https://github.com/FreeCAD/pivy/archive/{{ version }}.tar.gz
-  sha256: 0203cbb417b344474367129ec50cf2d8a3ddfdf5398aeca05d35eba798042146
+  sha256: c443dd7dd724b0bfa06427478b9d24d31e0c3b5138ac5741a2917a443b28f346
 
 build:
   number: 0
