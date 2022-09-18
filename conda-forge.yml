@@ -4,4 +4,7 @@ github:
   tooling_branch_name: main
 build_platform:
   osx_arm64: osx_64
+  linux_aarch64: linux_aarch64
+provider:
+  linux_aarch64: azure
 test_on_native_only: true
