@@ -16,6 +16,7 @@ cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX \
     -D Python_EXECUTABLE="$PYTHON" \
     -D PIVY_USE_QT6:BOOL=$USE_QT6 \
+    -D QT_HOST_PATH="${PREFIX}" \
     ..
 
 ninja install
