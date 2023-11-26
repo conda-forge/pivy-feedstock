@@ -11,7 +11,10 @@ source:
   sha256: 58a9b4b5685db29b01fd2eb11e0fff8b7b17ce5f24585b556fd716894c3a4aa3
 
 build:
-  number: 2
+  number: 0
+  script_env:
+    - USE_QT6=1  # [py >= 312]
+    - USE_QT6=0  # [py < 312]
 
 requirements:
   build:
