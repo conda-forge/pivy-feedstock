@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}.tar.gz
   url: https://github.com/coin3d/pivy/archive/conda-py311%2C-py312.tar.gz
-  sha256: 58a9b4b5685db29b01fd2eb11e0fff8b7b17ce5f24585b556fd716894c3a4aa3
+  sha256: 9f82c8e1d1b233b1360215f7901176dc554f0fc4ab394be2245e6a838f94843f
 
 build:
   number: 0
