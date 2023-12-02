@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}.tar.gz
   url: https://github.com/coin3d/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 9f82c8e1d1b233b1360215f7901176dc554f0fc4ab394be2245e6a838f94843f
+  sha256: 2c2da80ae216fe06394562f4a8fc081179d678f20bf6f8ec412cda470d7eeb91
 
 build:
   number: 0
