@@ -37,7 +37,7 @@ requirements:
     - python
     - {{ pin_compatible('coin3d', max_pin='x.x') }}
     - qt-main   # [py < 312]
-    - {{ pin_compatible('soqt', max_pin='x.x') }} # [py < 312]
+    - {{ pin_compatible('soqt', max_pin='x.x') }}  # [py < 312]
     - pyside2   # [py < 312]
     - qt6-main  # [py >= 312]
     - {{ pin_compatible('soqt6', max_pin='x.x') }}  # [py >= 312]
