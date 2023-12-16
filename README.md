@@ -223,14 +223,14 @@ Current release info
 Installing pivy
 ===============
 
-Installing `pivy` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `pivy` from the `conda-forge/label/pivy_rc` channel can be achieved by adding `conda-forge/label/pivy_rc` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/pivy_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pivy` can be installed with `conda`:
+Once the `conda-forge/label/pivy_rc` channel has been enabled, `pivy` can be installed with `conda`:
 
 ```
 conda install pivy
@@ -245,26 +245,26 @@ mamba install pivy
 It is possible to list all of the versions of `pivy` available on your platform with `conda`:
 
 ```
-conda search pivy --channel conda-forge
+conda search pivy --channel conda-forge/label/pivy_rc
 ```
 
 or with `mamba`:
 
 ```
-mamba search pivy --channel conda-forge
+mamba search pivy --channel conda-forge/label/pivy_rc
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search pivy --channel conda-forge
+mamba repoquery search pivy --channel conda-forge/label/pivy_rc
 
 # List packages depending on `pivy`:
-mamba repoquery whoneeds pivy --channel conda-forge
+mamba repoquery whoneeds pivy --channel conda-forge/label/pivy_rc
 
 # List dependencies of `pivy`:
-mamba repoquery depends pivy --channel conda-forge
+mamba repoquery depends pivy --channel conda-forge/label/pivy_rc
 ```
 
 

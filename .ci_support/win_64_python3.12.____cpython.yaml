@@ -5,7 +5,7 @@ MACOSX_SDK_VERSION:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge pivy_rc
 cxx_compiler:
 - vs2019
 pin_run_as_build:
