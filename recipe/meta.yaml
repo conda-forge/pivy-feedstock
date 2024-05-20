@@ -1,5 +1,5 @@
 {% set name = "pivy" %}
-{% set version = "0.6.8" %}
+{% set version = "0.6.9.a0" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,14 @@ package:
 
 source:
   fn: {{ name }}.tar.gz
-  url: https://github.com/FreeCAD/pivy/archive/{{ version }}.tar.gz
-  sha256: c443dd7dd724b0bfa06427478b9d24d31e0c3b5138ac5741a2917a443b28f346
+  url: https://github.com/coin3d/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 2c2da80ae216fe06394562f4a8fc081179d678f20bf6f8ec412cda470d7eeb91
 
 build:
-  number: 2
+  number: 0
+  script_env:
+    - USE_QT6=1  # [py >= 312]
+    - USE_QT6=0  # [py < 312]
 
 requirements:
   build:
@@ -26,14 +29,21 @@ requirements:
   host:
     - python
     - coin3d
-    - soqt
-    - qt-main
+    - soqt      # [py < 312]
+    - qt-main   # [py < 312]
+    - soqt6     # [py >= 312]
+    - qt6-main  # [py >= 312]
   run:
     - python
-    - coin3d
-    - qt-main
-    - pyside2
-    - soqt
+    - {{ pin_compatible('coin3d', max_pin='x.x') }}
+    - qt-main   # [py < 312]
+    - {{ pin_compatible('soqt', max_pin='x.x') }}  # [py < 312]
+    - pyside2   # [py < 312]
+    - qt6-main  # [py >= 312]
+    - {{ pin_compatible('soqt6', max_pin='x.x') }}  # [py >= 312]
+    - pyside6   # [py >= 312]
+  run_constrained:
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.14") }}  # [osx and x86_64]
 
 test:
   imports:
