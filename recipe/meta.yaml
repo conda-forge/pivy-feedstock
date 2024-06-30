@@ -43,8 +43,6 @@ requirements:
     - qt6-main  # [py >= 312]
     - {{ pin_compatible('soqt6', max_pin='x.x') }}  # [py >= 312]
     - pyside6   # [py >= 312]
-  run_constrained:
-    - {{ stdlib("c") }}
 
 test:
   imports:
