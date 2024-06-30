@@ -1,7 +1,7 @@
 channel_targets:
 - conda-forge pivy_rc
-MACOSX_DEPLOYMENT_TARGET:
-  - '10.15'
+c_stdlib_version:          # [osx]
+  - '10.15'                  # [osx]
 MACOSX_SDK_VERSION:
   - '11.0'
 vc:
