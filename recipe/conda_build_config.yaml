@@ -7,4 +7,4 @@ MACOSX_SDK_VERSION:
 vc:
   - 14
 qt6_main:
-  - '6.6'
+  - '6.7'
