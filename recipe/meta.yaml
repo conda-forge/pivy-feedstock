@@ -18,10 +18,11 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - {{ stdlib("c") }}
     - {{ compiler("cxx") }}
     - {{ cdt('mesa-libgl-devel') }}      # [linux]
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - msinttypes      # [win]
     - cmake
     - ninja
@@ -42,8 +43,6 @@ requirements:
     - qt6-main  # [py >= 312]
     - {{ pin_compatible('soqt6', max_pin='x.x') }}  # [py >= 312]
     - pyside6   # [py >= 312]
-  run_constrained:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.14") }}  # [osx and x86_64]
 
 test:
   imports:
