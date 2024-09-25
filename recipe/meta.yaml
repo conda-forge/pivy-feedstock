@@ -1,5 +1,5 @@
 {% set name = "pivy" %}
-{% set version = "0.6.9.a0" %}
+{% set version = "0.6.9" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}.tar.gz
   url: https://github.com/coin3d/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 2c2da80ae216fe06394562f4a8fc081179d678f20bf6f8ec412cda470d7eeb91
+  sha256: c207f5ed73089b2281356da4a504c38faaab90900b95639c80772d9d25ba0bbc
 
 build:
   number: 0
