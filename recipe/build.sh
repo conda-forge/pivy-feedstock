@@ -1,6 +1,3 @@
-mkdir -p build
-cd build
-
 echo "USE_QT6 is set ${USE_QT6}"
 
 if [[ ${HOST} =~ .*linux.* && ${USE_QT6} = "0" ]]; then
@@ -11,12 +8,11 @@ fi
 PIVY_CPP_FLAGS='-std=c++1z '
 
 cmake ${CMAKE_ARGS} \
-    -G "Ninja" \
+    -G "Ninja" -B build -S . \
     -D CMAKE_BUILD_TYPE="Release" \
     -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX \
     -D Python_EXECUTABLE="$PYTHON" \
     -D PIVY_USE_QT6:BOOL=$USE_QT6 \
-    -D QT_HOST_PATH="${PREFIX}" \
-    ..
+    -D QT_HOST_PATH="${PREFIX}"
 
 ninja install
