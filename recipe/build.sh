@@ -15,4 +15,4 @@ cmake ${CMAKE_ARGS} \
     -D PIVY_USE_QT6:BOOL=$USE_QT6 \
     -D QT_HOST_PATH="${PREFIX}"
 
-ninja install
+ninja -C build install
