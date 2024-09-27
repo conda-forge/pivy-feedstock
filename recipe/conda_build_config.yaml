@@ -6,6 +6,6 @@ c_compiler:         # [win]
   - clang           # [win]
 cxx_compiler:       # [win]
   - clangxx         # [win]
-build_variant:
-  - "qt6"
-  - "qt5"
+qt:
+  - "6"
+  - "5"

@@ -13,8 +13,8 @@ source:
 build:
   number: 0
   script_env:
-    - USE_QT6=1  # [build_variant == "qt6"]
-    - USE_QT6=0  # [build_variant == "qt5"]
+    - USE_QT6=1  # [qt == "6"]
+    - USE_QT6=0  # [qt == "5"]
 
 requirements:
   build:
@@ -30,10 +30,10 @@ requirements:
   host:
     - python
     - coin3d
-    - soqt      # [build_variant == "qt5"]
-    - qt-main   # [build_variant == "qt5"]
-    - soqt6     # [build_variant == "qt6"]
-    - qt6-main  # [build_variant == "qt6"]
+    - soqt      # [qt == "5"]
+    - qt-main   # [qt == "5"]
+    - soqt6     # [qt == "6"]
+    - qt6-main  # [qt == "6"]
   run:
     - python
 
