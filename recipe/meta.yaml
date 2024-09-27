@@ -13,8 +13,8 @@ source:
 build:
   number: 0
   script_env:
-    - USE_QT6=1  # [py >= 312]
-    - USE_QT6=0  # [py < 312]
+    - USE_QT6=1  # [build_variant == "qt6"]
+    - USE_QT6=0  # [build_variant == "qt5"]
 
 requirements:
   build:
@@ -30,19 +30,12 @@ requirements:
   host:
     - python
     - coin3d
-    - soqt      # [py < 312]
-    - qt-main   # [py < 312]
-    - soqt6     # [py >= 312]
-    - qt6-main  # [py >= 312]
+    - soqt      # [build_variant == "qt5"]
+    - qt-main   # [build_variant == "qt5"]
+    - soqt6     # [build_variant == "qt6"]
+    - qt6-main  # [build_variant == "qt6"]
   run:
     - python
-    - {{ pin_compatible('coin3d', max_pin='x.x') }}
-    - qt-main   # [py < 312]
-    - {{ pin_compatible('soqt', max_pin='x.x') }}  # [py < 312]
-    - pyside2   # [py < 312]
-    - qt6-main  # [py >= 312]
-    - {{ pin_compatible('soqt6', max_pin='x.x') }}  # [py >= 312]
-    - pyside6   # [py >= 312]
 
 test:
   imports:
