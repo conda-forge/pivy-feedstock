@@ -13,9 +13,9 @@ source:
 build:
   number: 0
   script_env:
-    - USE_QT6=1  # [qt == "6"]
-    - USE_QT6=0  # [qt == "5"]
-  skip: true     # [py < 312 and qt == "5"]
+    - USE_QT6=1  # [qt == 6]
+    - USE_QT6=0  # [qt == 5]
+  skip: true     # [qt == 5 and py > 311]
 
 requirements:
   build:
@@ -31,10 +31,10 @@ requirements:
   host:
     - python
     - coin3d
-    - soqt      # [qt == "5"]
-    - qt-main   # [qt == "5"]
-    - soqt6     # [qt == "6"]
-    - qt6-main  # [qt == "6"]
+    - soqt      # [qt == 5]
+    - qt-main   # [qt == 5]
+    - soqt6     # [qt == 6]
+    - qt6-main  # [qt == 6]
   run:
     - python
 

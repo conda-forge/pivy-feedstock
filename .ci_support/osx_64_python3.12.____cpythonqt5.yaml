@@ -24,5 +24,9 @@ python:
 - 3.12.* *_cpython
 qt:
 - '5'
+qt6_main:
+- '6.7'
+qt_main:
+- '5.15'
 target_platform:
 - osx-64
