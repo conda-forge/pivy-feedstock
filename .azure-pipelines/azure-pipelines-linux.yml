@@ -56,10 +56,6 @@ jobs:
         CONFIG: linux_aarch64_python3.11.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
-      linux_aarch64_python3.12.____cpythonqt5:
-        CONFIG: linux_aarch64_python3.12.____cpythonqt5
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
       linux_aarch64_python3.12.____cpythonqt6:
         CONFIG: linux_aarch64_python3.12.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
