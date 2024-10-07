@@ -1,5 +1,5 @@
 {% set name = "pivy" %}
-{% set version = "0.6.8" %}
+{% set version = "0.6.9" %}
 
 package:
   name: {{ name }}
@@ -7,33 +7,36 @@ package:
 
 source:
   fn: {{ name }}.tar.gz
-  url: https://github.com/FreeCAD/pivy/archive/{{ version }}.tar.gz
-  sha256: c443dd7dd724b0bfa06427478b9d24d31e0c3b5138ac5741a2917a443b28f346
+  url: https://github.com/coin3d/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
+  sha256: c207f5ed73089b2281356da4a504c38faaab90900b95639c80772d9d25ba0bbc
 
 build:
-  number: 2
+  number: 0
+  script_env:
+    - USE_QT6=1  # [qt == 6]
+    - USE_QT6=0  # [qt == 5]
+  skip: true     # [qt == 5 and py > 311]
 
 requirements:
   build:
+    - {{ stdlib("c") }}
+    - {{ compiler("cxx") }}
+    - {{ cdt('mesa-libgl-devel') }}          # [linux]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - {{ compiler("cxx") }}
-    - {{ cdt('mesa-libgl-devel') }}      # [linux]
-    - msinttypes      # [win]
+    - msinttypes                             # [win]
     - cmake
     - ninja
     - swig
   host:
     - python
     - coin3d
-    - soqt
-    - qt-main
+    - soqt      # [qt == 5]
+    - qt-main   # [qt == 5]
+    - soqt6     # [qt == 6]
+    - qt6-main  # [qt == 6]
   run:
     - python
-    - coin3d
-    - qt-main
-    - pyside2
-    - soqt
 
 test:
   imports:
