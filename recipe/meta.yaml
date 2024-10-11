@@ -1,6 +1,10 @@
 {% set name = "pivy" %}
 {% set version = "0.6.9" %}
 
+{% if qt is undefined %}
+{% set qt = "6" %}
+{% endif %}
+
 package:
   name: {{ name }}
   version: {{ version }}
@@ -11,11 +15,14 @@ source:
   sha256: c207f5ed73089b2281356da4a504c38faaab90900b95639c80772d9d25ba0bbc
 
 build:
-  number: 0
+  number: 1
   script_env:
-    - USE_QT6=1  # [qt == 6]
-    - USE_QT6=0  # [qt == 5]
-  skip: true     # [qt == 5 and py > 311]
+  {% if qt|int >=6 %}
+    - USE_QT6=1
+  {% else %}
+    - USE_QT6=0
+  skip: true     # [py>311]
+  {% endif %}
 
 requirements:
   build:
@@ -31,10 +38,13 @@ requirements:
   host:
     - python
     - coin3d
-    - soqt      # [qt == 5]
-    - qt-main   # [qt == 5]
-    - soqt6     # [qt == 6]
-    - qt6-main  # [qt == 6]
+  {% if qt|int >=6 %}
+    - qt6-main
+    - soqt6
+  {% else %}
+    - qt-main
+    - soqt
+  {% endif %}
   run:
     - python
 
