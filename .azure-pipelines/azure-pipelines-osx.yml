@@ -26,6 +26,12 @@ jobs:
       osx_64_python3.12.____cpythonqt6:
         CONFIG: osx_64_python3.12.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
+      osx_64_python3.13.____cp313qt5:
+        CONFIG: osx_64_python3.13.____cp313qt5
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.13.____cp313qt6:
+        CONFIG: osx_64_python3.13.____cp313qt6
+        UPLOAD_PACKAGES: 'True'
       osx_64_python3.9.____cpythonqt5:
         CONFIG: osx_64_python3.9.____cpythonqt5
         UPLOAD_PACKAGES: 'True'
@@ -49,6 +55,12 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       osx_arm64_python3.12.____cpythonqt6:
         CONFIG: osx_arm64_python3.12.____cpythonqt6
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_python3.13.____cp313qt5:
+        CONFIG: osx_arm64_python3.13.____cp313qt5
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_python3.13.____cp313qt6:
+        CONFIG: osx_arm64_python3.13.____cp313qt6
         UPLOAD_PACKAGES: 'True'
       osx_arm64_python3.9.____cpythonqt5:
         CONFIG: osx_arm64_python3.9.____cpythonqt5
