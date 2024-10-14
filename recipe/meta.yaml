@@ -15,7 +15,7 @@ source:
   sha256: c207f5ed73089b2281356da4a504c38faaab90900b95639c80772d9d25ba0bbc
 
 build:
-  number: 1
+  number: 2
   string: py{{ CONDA_PY }}qt{{ qt }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
   script_env:
   {% if qt|int >=6 %}
