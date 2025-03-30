@@ -8,6 +8,7 @@ fi
 Python_INCLUDE_DIR="$(python -c 'import sysconfig; print(sysconfig.get_path("include"))')"
 
 cmake -G "Ninja" -B build \
+      -D CMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -D CMAKE_BUILD_TYPE:STRING="Release" \
       -D CMAKE_INSTALL_PREFIX:PATH=$PREFIX \
       -D Python_EXECUTABLE:PATH="$PYTHON" \
