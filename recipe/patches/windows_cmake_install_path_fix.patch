@@ -1,0 +1,19 @@
+commit fc622b3bd97525c0813328ee909ccee3bcc639c3
+Author: looooo <sppedflyer@gmail.com>
+Date:   Thu Apr 24 21:22:38 2025 +0200
+
+    cmake: make install path cmake-compatible for windows
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a968da0..61f3cd6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -24,6 +24,8 @@ if (NOT PIVY_Python_SITEARCH)
+     SET(PIVY_Python_SITEARCH ${Python_SITEARCH})
+ endif()
+ 
++file(TO_CMAKE_PATH "${PIVY_Python_SITEARCH}" PIVY_Python_SITEARCH)
++
+ if (Python_FOUND)
+ 	MESSAGE(STATUS "Python_FOUND: TRUE")
+ 	MESSAGE(STATUS "PIVY_Python_SITEARCH: ${PIVY_Python_SITEARCH}")
