@@ -13,6 +13,8 @@ source:
   fn: {{ name }}.tar.gz
   url: https://github.com/coin3d/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
   sha256: 7b409816c9fad84cf94f93659281f9dd2501d285eb2fc609e9401a3d004ce723
+  patches:
+    - patches/osx_arm64_cross_compiling.patch
 
 build:
   number: 0
