@@ -7,13 +7,13 @@ c_stdlib_version:
 cdt_name:
 - conda
 channel_sources:
-- conda-forge
+- conda-forge,conda-forge/label/python_rc
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '13'
+- '14'
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 pin_run_as_build:
@@ -21,12 +21,15 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.9.* *_cpython
+- 3.14.* *_cp314
 qt:
-- '6'
+- '5'
 qt6_main:
 - '6.7'
 qt_main:
 - '5.15'
 target_platform:
 - linux-aarch64
+zip_keys:
+- - python
+  - channel_sources
