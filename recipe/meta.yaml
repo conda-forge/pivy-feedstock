@@ -17,7 +17,7 @@ source:
     - patches/windows_cmake_install_path_fix.patch
 
 build:
-  number: 0
+  number: 1
   string: py{{ CONDA_PY }}qt{{ qt }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
   script_env:
   {% if qt|int >=6 %}
