@@ -32,11 +32,11 @@ jobs:
       osx_64_python3.13.____cp313qt6:
         CONFIG: osx_64_python3.13.____cp313qt6
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.9.____cpythonqt5:
-        CONFIG: osx_64_python3.9.____cpythonqt5
+      osx_64_python3.14.____cp314qt5:
+        CONFIG: osx_64_python3.14.____cp314qt5
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.9.____cpythonqt6:
-        CONFIG: osx_64_python3.9.____cpythonqt6
+      osx_64_python3.14.____cp314qt6:
+        CONFIG: osx_64_python3.14.____cp314qt6
         UPLOAD_PACKAGES: 'True'
       osx_arm64_python3.10.____cpythonqt5:
         CONFIG: osx_arm64_python3.10.____cpythonqt5
@@ -62,11 +62,11 @@ jobs:
       osx_arm64_python3.13.____cp313qt6:
         CONFIG: osx_arm64_python3.13.____cp313qt6
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_python3.9.____cpythonqt5:
-        CONFIG: osx_arm64_python3.9.____cpythonqt5
+      osx_arm64_python3.14.____cp314qt5:
+        CONFIG: osx_arm64_python3.14.____cp314qt5
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_python3.9.____cpythonqt6:
-        CONFIG: osx_arm64_python3.9.____cpythonqt6
+      osx_arm64_python3.14.____cp314qt6:
+        CONFIG: osx_arm64_python3.14.____cp314qt6
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables: {}
