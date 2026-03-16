@@ -5,51 +5,65 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-15
+    vmImage: $(VMIMAGE)
   strategy:
     matrix:
       osx_64_python3.10.____cpythonqt5:
         CONFIG: osx_64_python3.10.____cpythonqt5
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_python3.10.____cpythonqt6:
         CONFIG: osx_64_python3.10.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_python3.11.____cpythonqt5:
         CONFIG: osx_64_python3.11.____cpythonqt5
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_python3.11.____cpythonqt6:
         CONFIG: osx_64_python3.11.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_python3.12.____cpythonqt6:
         CONFIG: osx_64_python3.12.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_python3.13.____cp313qt6:
         CONFIG: osx_64_python3.13.____cp313qt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_python3.14.____cp314qt6:
         CONFIG: osx_64_python3.14.____cp314qt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_python3.10.____cpythonqt5:
         CONFIG: osx_arm64_python3.10.____cpythonqt5
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_python3.10.____cpythonqt6:
         CONFIG: osx_arm64_python3.10.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_python3.11.____cpythonqt5:
         CONFIG: osx_arm64_python3.11.____cpythonqt5
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_python3.11.____cpythonqt6:
         CONFIG: osx_arm64_python3.11.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_python3.12.____cpythonqt6:
         CONFIG: osx_arm64_python3.12.____cpythonqt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_python3.13.____cp313qt6:
         CONFIG: osx_arm64_python3.13.____cp313qt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_python3.14.____cp314qt6:
         CONFIG: osx_arm64_python3.14.____cp314qt6
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
   timeoutInMinutes: 360
   variables: {}
 
