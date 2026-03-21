@@ -17,7 +17,7 @@ source:
     - patches/windows_cmake_install_path_fix.patch
 
 build:
-  number: 3
+  number: 4
   string: py{{ CONDA_PY }}qt{{ qt }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
   script_env:
   {% if qt|int >=6 %}
@@ -31,7 +31,6 @@ requirements:
   build:
     - {{ stdlib("c") }}
     - {{ compiler("cxx") }}
-    - {{ cdt('mesa-libgl-devel') }}          # [linux]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - msinttypes                             # [win]
@@ -48,6 +47,7 @@ requirements:
     - qt-main
     - soqt
   {% endif %}
+    - libgl-devel                            # [linux]
   run:
     - python
 
