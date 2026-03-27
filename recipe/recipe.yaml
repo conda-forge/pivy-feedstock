@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pivy
-  version: "0.6.10"
+  version: "0.6.11"
 
 package:
   name: ${{ name }}
@@ -10,12 +10,12 @@ package:
 
 source:
   url: https://github.com/coin3d/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 7b409816c9fad84cf94f93659281f9dd2501d285eb2fc609e9401a3d004ce723
+  sha256: 78f79bd7d1ce7e8140ceba4b1220136ea1f14b4403b1e463c59fa892feed961e
   patches:
     - patches/windows_cmake_install_path_fix.patch
 
 build:
-  number: 5
+  number: 0
   string: py${{ python | version_to_buildstring }}qt${{ qt }}h${{ hash }}_${{ build_number }}
   skip: ${{ match(python, ">3.11") and (qt == "5") }}
   script:
