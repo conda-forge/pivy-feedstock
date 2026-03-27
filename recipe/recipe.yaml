@@ -1,0 +1,71 @@
+schema_version: 1
+
+context:
+  name: pivy
+  version: "0.6.10"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/coin3d/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
+  sha256: 7b409816c9fad84cf94f93659281f9dd2501d285eb2fc609e9401a3d004ce723
+  patches:
+    - patches/windows_cmake_install_path_fix.patch
+
+build:
+  number: 5
+  string: py${{ python | version_to_buildstring }}qt${{ qt }}h${{ hash }}_${{ build_number }}
+  skip: ${{ match(python, ">3.11") and (qt == "5") }}
+  script:
+    env:
+      USE_QT6: ${{ "1" if qt == "6" else "0" }}
+
+requirements:
+  build:
+    - ${{ stdlib("c") }}
+    - ${{ compiler("cxx") }}
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: win
+      then: msinttypes
+    - cmake
+    - ninja
+    - swig
+  host:
+    - python
+    - coin3d
+    - if: qt == "6"
+      then:
+        - qt6-main
+        - soqt6
+    - if: qt == "5"
+      then:
+        - qt-main
+        - soqt
+    - if: linux
+      then: libgl-devel
+  run:
+    - python
+
+tests:
+  - python:
+      imports:
+        - pivy.coin
+        - pivy.gui.soqt
+      pip_check: false
+
+about:
+  license: ISC
+  license_file: LICENSE
+  summary: python bindings to coin3d.
+  homepage: https://github.com/FreeCAD/pivy
+  repository: https://github.com/FreeCAD/pivy
+  documentation: https://github.com/FreeCAD/pivy
+
+extra:
+  recipe-maintainers:
+    - looooo
