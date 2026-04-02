@@ -7,3 +7,5 @@ cxx_compiler:       # [win]
 qt:
   - "6"
   - "5"
+qt6_main:
+  - '6.11'

@@ -15,7 +15,7 @@ source:
     - patches/windows_cmake_install_path_fix.patch
 
 build:
-  number: 0
+  number: 1
   string: py${{ python | version_to_buildstring }}qt${{ qt }}h${{ hash }}_${{ build_number }}
   skip: ${{ match(python, ">3.11") and (qt == "5") }}
   script:
